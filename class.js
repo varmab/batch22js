@@ -167,10 +167,8 @@ var sum=function(a,b){
 
 console.log(sum(2,3));
 
-
 //Function expressions are not hoisted
 //Modern programmers writes functions using Function expression syntex
-
 
 //Arrays
 var myNumbers=["one","two","three"];
