@@ -191,3 +191,108 @@ myLetters.forEach(function(value){
 })
 
 
+var movies=[
+    {
+        id:1,
+        title:"Bahubali",
+        actor:"Prabhas",
+        revenue:300,
+        theaters:["A","B"]
+    },
+    {
+        id:2,
+        title:"Adhurs",
+        actor:"NTR",
+        revenue:50,
+        theaters:["B","C"]
+    },
+    {
+        id:3,
+        title:"Kushi",
+        actor:"Pavan",
+        revenue:15,
+        theaters:["C","D"]
+    }
+]
+
+// every, some, filter, map, reduce
+
+//1.is any movie crossed 50cr revenue?
+var isAny50=movies.some(function(movie){
+    return movie.revenue>=50;
+})
+
+console.log(isAny50);
+
+//2. is all movies crossed 100cr revenue?
+var isAll100=movies.every(function(movie){
+    return movie.revenue>=100;
+})
+
+console.log(isAll100)
+
+//3. I want to get a list of movies released in
+// theater B
+
+var bMovies=movies.filter(function(movie){
+    return movie.theaters.indexOf("B")!=-1;
+})
+
+console.log(bMovies);
+
+//4. I want list of actors of all movies
+// ["Prabhas","NTR","Pavan"]
+var actors=movies.map(function(movie){
+    return movie.actor;
+})
+console.log(actors);
+
+//5. I want total revenue of all movies
+var totalRevenue=movies.reduce(function(total,movie){
+    return total + movie.revenue;
+},0)
+
+console.log(totalRevenue);
+
+// 6: I want list of titles in comma seperated strong
+// "Bahubali,Adhurs,Kushi"
+var titles=movies.reduce(function(titles,movie){
+    if(titles=="") return movie.title;
+    return titles + "," + movie.title;
+},'')
+console.log(titles);
+
+//7. I want list of all theaters of all movies
+// ["A","B","C","D"]
+var theaters=movies.reduce(function(theaters,movie){
+    movie.theaters.forEach(function(theater){
+        if(theaters.indexOf(theater)==-1){
+            theaters.push(theater);
+        }
+    })
+    return theaters;
+},[])
+console.log(theaters);
+
+var user={}
+
+user.name="Varma";
+user["age"]=46;
+var key="college name"
+user[key]="JNTU";
+
+//8. I want an single object containing movie title as key
+// actor as value
+/*
+    {
+        "Bahubali":"Prabhas",
+        "Adhurs":"NTR",
+        "Kushi":"Pavan"
+    }
+*/
+
+
+
+
+
+
