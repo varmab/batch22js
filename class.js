@@ -193,18 +193,18 @@ myLetters.forEach(function(value){
 
 var movies=[
     {
-        id:1,
-        title:"Bahubali",
-        actor:"Prabhas",
-        revenue:300,
-        theaters:["A","B"]
-    },
-    {
         id:2,
         title:"Adhurs",
         actor:"NTR",
         revenue:50,
         theaters:["B","C"]
+    },
+    {
+        id:1,
+        title:"Bahubali",
+        actor:"Prabhas",
+        revenue:300,
+        theaters:["A","B"]
     },
     {
         id:3,
@@ -290,6 +290,30 @@ user[key]="JNTU";
         "Kushi":"Pavan"
     }
 */
+
+var titleActors=movies.reduce(function(titles,movie){
+    titles[movie.title]=movie.actor;
+    return titles;
+},{})
+
+console.log(JSON.stringify(titleActors));
+
+var a=[1,2,3];
+var b=[4,5,6];
+var c=a.concat(b);
+c.reverse();
+
+movies.sort(function(a,b){
+    if(a.revenue>b.revenue) return 1;
+    if(a.revenue<b.revenue) return -1;
+    return 0;
+})
+
+
+
+
+
+
 
 
 

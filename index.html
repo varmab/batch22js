@@ -6,8 +6,67 @@
             console.log("Welcome from Inline JavaScript");
         </script>
         <script src="class.js"></script>
+        <style>
+            .purpleheading{
+                color: purple;
+                font-size: 76px;
+            }
+
+            .redheading{
+                color: red;
+                font-size: 76px;
+            }
+        
+        </style>
     </head>
     <body>
         <h1>Welcome to JavaScript</h1>
+        <h1>Hello</h1>
+        <h1>Goodbye</h1>
+        <p>Welcome to Coding Sastra</p>
+        <ul>
+            <li id="highlight">List Item 1</li>
+            <li class="bolded">List Item 2</li>
+            <li class="bolded">List Item 3</li>
+        </ul>
+        <a href="http://yahoo.com">Yahoo!!!</a>
+        <button>Say Hello</button>
     </body>
 </html>
+<script>
+    var h1=document.querySelector("h1"); //SELECT
+    //h1.style.color="red"; //MANIPULATE
+
+    //getElementById
+    var firstLi=document.getElementById("highlight");
+    firstLi.style.color="green";
+
+    // querySelector("#first")
+    // querySelector(".special")
+    // querySelector("p")
+    // getElementById("first")
+    
+    //h1.classList.add("purpleheading");
+    //h1.classList.toggle("redheading");
+    
+    var p=document.querySelector("p");
+    p.innerHTML="Thank you for coming to <b>Coding Sastra</b>"
+
+    var a=document.querySelector("a");
+    a.setAttribute("href","http://google.com")
+    a.textContent="Google";
+
+    var button=document.querySelector("button");
+    button.addEventListener("click",function(){
+        alert("Hello")
+    })
+
+    h1.addEventListener("mouseover",function(){
+        h1.textContent="Thank you for coming"
+    })
+
+    h1.addEventListener("mouseout",function(){
+        h1.textContent="Welcome to JavaScript"
+    })
+
+</script>
